@@ -158,8 +158,8 @@ importers:
   examples/anchor-starter:
     dependencies:
       '@orbital-stellar/anchor-sdk':
-        specifier: workspace:*
-        version: link:../../packages/anchor-sdk
+        specifier: ^0.2.0
+        version: 0.2.0
       '@stellar/stellar-sdk':
         specifier: ^16.1.0
         version: 16.2.0
@@ -168,11 +168,11 @@ importers:
         version: 4.6.2
     devDependencies:
       '@orbital-stellar/abi-registry':
-        specifier: workspace:*
-        version: link:../../packages/abi-registry
+        specifier: ^0.2.0
+        version: 0.2.0
       '@orbital-stellar/pulse-core':
-        specifier: workspace:*
-        version: link:../../packages/pulse-core
+        specifier: ^0.2.0
+        version: 0.2.0
       '@types/node':
         specifier: ^26.5.1
         version: 26.5.1
@@ -1074,6 +1074,10 @@ packages:
     resolution: {integrity: sha512-Tq5LyxpBKG5dy+vudrzL4nQl2O/oWuHESO8NQeHROEjZd7mjGd/jONRC+/X3fia2/MBfrYKSL4/jmSIZOsYiXg==}
     engines: {node: '>=20'}
     hasBin: true
+
+  '@orbital-stellar/anchor-sdk@0.2.0':
+    resolution: {integrity: sha512-kkV2TjZO2jQe1eSDNSZlchXkpcuQHQorqx9zIWksgDdjgoMAvFoUdPTZfubXtFlDY3Kq5kxEntBKOgIA8beMkA==}
+    engines: {node: '>=20'}
 
   '@orbital-stellar/pulse-core@0.1.0':
     resolution: {integrity: sha512-s0kq8o/ZkjGoSB6ZlaW8+Dunz5wWB3PVFNIUYkTCfXntVm14wI3+0EKkMjufxmNvBYrgHmR/VlW7yn6wYH+Lyw==}
@@ -4272,6 +4276,14 @@ snapshots:
       '@stellar/js-xdr': 4.0.0
       '@stellar/stellar-sdk': 16.2.0
       yargs: 18.1.0
+    transitivePeerDependencies:
+      - debug
+      - supports-color
+
+  '@orbital-stellar/anchor-sdk@0.2.0':
+    dependencies:
+      '@orbital-stellar/pulse-core': 0.2.0
+      zod: 4.6.2
     transitivePeerDependencies:
       - debug
       - supports-color
